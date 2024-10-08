@@ -1,0 +1,169 @@
+@use 'sass:math';
+@import "./_variables.scss";
+
+
+@import './string.scss';
+@import './math.scss';
+@import "./_mixins.sass";
+
+@import "./_dimensions.scss";
+
+.row, .column, .flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  flex-basis: 100%;
+  position: relative;
+  &.inline {
+    display: inline-flex;
+  }
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+.column {
+  flex-direction: column;
+
+  &.reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
+}
+
+.reverse-wrap {
+  flex-wrap: wrap-reverse;
+}
+
+.order- {
+  &first {
+    order: -10000;
+  }
+
+  &last {
+    order: 10000;
+  }
+
+  &none {
+    order: 0;
+  }
+}
+
+@each $name, $size in $sizes {
+  @include fg("-" + $name, $size);
+}
+
+
+.hAlign- {
+  &start {
+    justify-content: flex-start;
+  }
+
+  &end {
+    justify-content: flex-end;
+  }
+
+  &center {
+    justify-content: center;
+  }
+
+  &between {
+    justify-content: space-between;
+  }
+
+  &around {
+    justify-content: space-around;
+  }
+
+  &evenly {
+    justify-content: space-evenly;
+  }
+}
+
+
+.vAlign- {
+  &start {
+    align-items: flex-start;
+  }
+
+  &end {
+    align-items: flex-end;
+  }
+
+  &center {
+    align-items: center;
+  }
+
+  &baseline {
+    align-items: baseline;
+  }
+
+  &stretch {
+    align-items: stretch;
+  }
+}
+
+.content- {
+  &start {
+    align-content: flex-start;
+  }
+
+  &end {
+    align-content: flex-end;
+  }
+
+  &center {
+    align-content: center;
+  }
+
+  &stretch {
+    align-content: stretch;
+  }
+
+  &between {
+    align-content: space-between;
+  }
+
+  &around {
+    align-content: space-around;
+  }
+}
+
+.col-align- {
+
+  &start {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+
+}
+
+
+.page-width {
+  @extend .col-lg-9;
+  @extend .col-md-10;
+  @extend .col-12;
+  @extend .q-pa-md;
+}
