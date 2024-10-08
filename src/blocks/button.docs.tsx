@@ -8,7 +8,13 @@ export const ButtonDocs = () => {
         The button component is meant as a versatile form or standalone button.
       </p>
       <div class="example">
-        It comes as <Button>Primary</Button>, <Button variant="secondary">Secondary</Button>, <Button variant="link">Link</Button> and <Button variant="icon">🤗</Button> Icon button.
+        It comes as <Button rectangle={true}>rectangle</Button>,
+          <Button color="secondary" rounded={true}>Secondary Round</Button>,
+          <Button color="primary" outline={true}>Primary OUtliner</Button>,
+          <Button color="secondary" help={true}>Secondary Help</Button>,
+          <Button color="secondary" transparent={true}>Secondary Transparent</Button>,
+          <a color="link"  href={""}>Link</a>
+
       </div>
       <h3>Properties</h3>
       <pre>

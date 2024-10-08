@@ -1,0 +1,213 @@
+$shadow-color         : #000 !default;
+$elevation-umbra      : rgba($shadow-color, .2) !default;
+$elevation-penumbra   : rgba($shadow-color, .14) !default;
+$elevation-ambient    : rgba($shadow-color, .12) !default;
+
+
+$button-border-radius           : 3px !default;
+$button-padding                 : 4px 16px !default;
+$button-dense-padding           : .285em !default;
+$generic-border-radius          : 4px !default;
+$generic-hover-transition       : .3s cubic-bezier(.25, .8, .5, 1) !default;
+$button-transition              : $generic-hover-transition !default;
+$button-font-size               : 14px !default;
+$button-line-height             : 1.715em !default;
+$button-font-weight             : 500 !default;
+$shadow-2  : 0 1px 5px $elevation-umbra, 0 2px 2px $elevation-penumbra, 0 3px 1px -2px $elevation-ambient !default;
+$shadow-5  : 0 3px 5px -1px $elevation-umbra, 0 5px 8px $elevation-penumbra, 0 1px 14px $elevation-ambient !default;
+$button-shadow                  : $shadow-2 !default;
+$button-shadow-active           : $shadow-5 !default;
+$button-rounded-border-radius   : 28px !default;
+$button-push-border-radius      : 7px !default;
+
+$bg-btn: black;
+$blue-grey-10:#547889;
+$bg-blue-grey:#547889;
+$accent: purple;
+$purple: #ea80ea;
+
+span.ripple {
+  position: absolute; /* The absolute position we mentioned earlier */
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+
+$borderSize: 0.12rem;
+button, a {
+  display: inline-flex;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  outline: 0;
+  border: $borderSize solid transparent;
+  border-radius: 0.3rem;
+
+  font-size: $button-font-size;
+  line-height: $button-line-height;
+  text-decoration: none;
+
+  font-weight: $button-font-weight;
+  width: auto;
+  height: auto;
+  padding: $button-padding;
+  min-height: 2.572rem;
+  overflow: hidden;
+  cursor: pointer;
+
+  // default bg
+  background-position: center;
+  transition: background 0.8s;
+  background-color: $bg-btn;
+  color: $accent;
+
+  &:focus, &:hover, &:active, &[aria-selected="true"] {
+    border: $borderSize solid orange !important;
+  }
+
+  // transpafent
+  &.transparent {
+    background-position: center;
+    transition: background 0.8s;
+    background-color: transparent;
+    &:hover, &:focus {
+      background-color: $blue-grey-10 !important;
+    }
+  }
+
+  //&:hover {
+  //  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+  //}
+
+  &:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
+  .q-icon, .q-spinner {
+    font-size: $button-line-height
+  }
+
+  &.disabled {
+    opacity: .7 !important
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.rectangle {
+    border-radius: $button-border-radius;
+  }
+
+  &.help {
+    border:$borderSize solid rgba(162, 37, 225, 0.5);
+    &:focus {
+      border: $borderSize solid orange ;
+    }
+    text-align: center;
+    color: $purple;
+    border:$borderSize solid currentColor;
+    background-color: black;
+    &:hover {
+      border: $borderSize solid orange !important;
+      background-color: $blue-grey-10;
+    }
+    &:hover {
+      //background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+    }
+    transition: background 0.3s;
+  }
+  &.outline {
+
+    &.semi-transparent-border {
+      border:$borderSize solid rgba(255,255,255,0.5);
+    }
+    &.selected {
+      border: $borderSize solid transparent !important;
+      cursor: none !important;
+      pointer-events: none !important;
+    }
+    &:focus {
+      border: $borderSize solid orange ;
+    }
+    text-align: center;
+    border:$borderSize solid currentColor;
+    background-color: transparent;
+    &:hover {
+      border: $borderSize solid orange !important;
+      background-color: $blue-grey-10;
+    }
+    &:hover {
+      //background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+    }
+    transition: background 0.3s;
+    &:active {
+      background-color: #6eb9f7;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &.rounded {
+    border-radius: $button-rounded-border-radius;
+  }
+
+  &.round {
+    border-radius: 50%;
+    padding: 0;
+    min-width: 3em;
+    min-height: 3em;
+  }
+
+  &.square {
+    border-radius: 0
+  }
+
+  &.flat, &.outline, &.unelevated, &.help {
+    &:before {
+      box-shadow: none;
+    }
+  }
+
+  &.link {
+    &:hover {
+      border: $borderSize solid orange;
+    }
+    background-color: transparent;
+    color: $accent;
+    text-decoration: underline;
+    text-transform: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    text-align: left;
+    //align-items: start;
+  }
+
+  &.backdrop {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: $borderSize solid rgba(255, 255, 255, 0.57);
+  }
+
+  &.glossy {
+    background-image: linear-gradient(to bottom, rgba(#fff, .3), rgba(#fff, 0) 50%, rgba(#000, .12) 51%, rgba(#000, .04)) !important;
+  }
+
+
+}
