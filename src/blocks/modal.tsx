@@ -13,7 +13,7 @@ import {
 import { Portal } from "solid-js/web";
 
 import "./base.css";
-import "./modal.css";
+import "./modal.scss";
 import { getElements, WrappedElement } from "./tools";
 
 export type WrappedModalContentProps = {

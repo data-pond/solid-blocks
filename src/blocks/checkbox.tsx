@@ -5,7 +5,7 @@ import { runEvent } from "./tools";
 import "./base.css";
 import "./checkbox.css";
 
-export type CheckboxProps = JSX.HTMLAttributes<HTMLInputElement> & {
+export type CheckboxProps = JSX.HTMLAttributes<HTMLInputElement> & JSX.HTMLAttributes<HTMLLabelElement> & {
   /**
    * align the checkbox inside its label
    * can be 'left' or 'right; default is 'left'
@@ -20,6 +20,7 @@ export type CheckboxProps = JSX.HTMLAttributes<HTMLInputElement> & {
   required?: boolean;
   switch?: boolean;
   value?: string;
+
 };
 
 export const Checkbox: Component<CheckboxProps> = (props) => {
@@ -45,13 +46,15 @@ export const Checkbox: Component<CheckboxProps> = (props) => {
     ],
     ["align", "children", "onChange", "setChecked", "switch"]
   );
-  
-  return (
+    //@ts-ignore
+  // @ts-ignore
+    return (
     <label
       class={`${content.align || "left"} ${
         content.switch ? " switch" : ""
       } sb-checkbox`}
-      {...labelProps as JSX.HTMLAttributes<HTMLLabelElement>}
+
+      {...labelProps}
     >
       <Show when={content.align === "right"}>{content.children}</Show>
       <input

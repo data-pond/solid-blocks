@@ -1,0 +1,11 @@
+
+*[tabindex="0"] {
+    border-width: 3px;
+    border-style:  solid;
+    border-color:  transparent;
+  }
+  
+  *[tabindex="0"]:focus {
+    border: 3px solid var(--focus-color);
+  }
+  

@@ -33,10 +33,16 @@ import { TooltipDocs } from "./blocks/tooltip.docs";
 import { HelpersDocs } from "./blocks/Helpers.docs";
 import { ThemeDocs } from "./blocks/theme.docs";
 import { TagDocs } from "./blocks/tag.docs";
+import {GridDocs} from "./blocks/grid.docs";
+import { DataPondTheme } from "./blocks/typo";
+import { ArweaveButtonDocs } from "./blocks/arweaveUploadButton.doc";
+import { ListDocs } from "./blocks/list.doc";
+
 
 const App: Component = () => {
   const [darkMode, setDarkMode] = useDarkMode();
   return (
+    <DataPondTheme>
     <div class="app" id="top">
       <Bar position="sticky" placement="top" portal={false}>
         <div style={{ flex: "1 1 50%", width: "auto" }}>
@@ -111,6 +117,12 @@ const App: Component = () => {
             </Tooltip>
           </span>
           <ul>
+            <li>
+              <a href="#grid-docs">Grid Doc</a>
+            </li>
+            <li>
+              <a href="#arweave-btn-docs">Arweave Btn Doc</a>
+            </li>
             <li>
               <a href="#accordion-docs">Accordion</a>
             </li>
@@ -193,8 +205,11 @@ const App: Component = () => {
               <a href="#theme-docs">Theme</a>
             </li>
           </ul>
-          <AccordionDocs />
-          <AvatarDocs />
+          <GridDocs/>
+          <ArweaveButtonDocs />
+          <ListDocs />
+          <AccordionDocs/>
+          <AvatarDocs/>
           <BarDocs />
           <BreadcrumbsDocs />
           <ButtonDocs />
@@ -276,6 +291,7 @@ const App: Component = () => {
         </TabContainer>
       </Tabs>
     </div>
+    </DataPondTheme>
   );
 };
 

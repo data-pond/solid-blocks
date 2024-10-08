@@ -62,6 +62,7 @@ const triggerHas = (
 
 const wrapText = (children: JSX.Element): JSX.Element => {
   if (typeof children === "function") {
+    // @ts-ignore
     return wrapText(children());
   }
   if (typeof children === "string") {
@@ -69,6 +70,7 @@ const wrapText = (children: JSX.Element): JSX.Element => {
   }
   if (Array.isArray(children)) {
     const result = children.map((child) =>
+        // @ts-ignore
       typeof child === "function" ? child() : child
     );
     if (result.every((child) => typeof child === "string")) {

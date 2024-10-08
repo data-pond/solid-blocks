@@ -1,0 +1,56 @@
+@import "./_fonts.scss";
+@import "./_type.scss";
+@import "./_ay11.scss";
+body {
+  --focus-color: orange;
+  --body-bg: white;
+}
+
+body, html {
+  font-family: 'Urbanist' ;
+  font-weight: normal;
+  background: var(--body-bg);
+  @media screen and (min-width: 1980px) {
+    font-size: 1.111vw !important;
+  }
+  @media screen and (min-width: 1440px) and (max-width: 1980px) {
+    font-size: 1.111vw !important;
+  }
+  // ipad air landscape
+
+  @media screen and (min-width: 1024px) and (max-width: 1439.99px) {
+    font-size: 1.4vw !important;
+    //font-size: 1.1vw !important;
+  }
+  @media screen and (min-width: 600px) and (max-width: 1023.99px) {
+    font-size: 1.888vw !important;
+  }
+  @media screen and (min-width: 0px) and (max-width: 599.99px) {
+    font-size: 4vw !important;
+  }
+}
+
+body {
+  min-width: 100px;
+  min-height: 100%;
+  font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+
+#menu-toggle {
+
+  .menu_icon{
+    transition: transform 0.3s linear;
+    transform: rotate(0deg);
+  }
+
+
+  &.active {
+    .menu_icon{
+        transform: rotate(90deg);
+        transition: transform 0.3s linear;
+    }
+  }
+}
+

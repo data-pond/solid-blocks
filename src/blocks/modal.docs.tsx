@@ -1,4 +1,5 @@
 import { Button } from "./button";
+import { Row, Col } from "./grid";
 import {
   Modal,
   ModalBody,
@@ -72,14 +73,24 @@ ModalProps {
               </Button>
               <ModalContent>
                 <ModalHeader>
-                  Header
+                  <Row hAlign="between">
+                    <Col >
+                  <h3>Header</h3>
+                  </Col>
+                  <Col>
                   <Button
-                    variant="icon"
+                    outline
+                    square
                     onclick={toggle}
                     style={{ float: "right" }}
                   >
                     ✕
                   </Button>
+                  </Col>
+                  </Row>
+                  
+
+
                 </ModalHeader>
                 <ModalBody>
                   <p>
