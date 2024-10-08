@@ -1,0 +1,71 @@
+@import './grid/index.scss';
+
+.list {
+
+
+    @extend .q-pa-none;
+
+    &.padding {
+
+        @extend .q-pa-md;
+
+        &.compact {
+            @extend .q-pa-sm;
+        }
+    }
+
+
+
+    &.bordered {
+
+        border: 1px solid #000 !important;
+        .item {
+            border-bottom: 1px solid #000 !important;
+        }
+    }
+
+
+    .item {    
+        &.clickable {
+            cursor: pointer;            
+            &:hover {
+                border-bottom: 1px solid red !important;
+                background-color: var(--primary);
+            }
+        }
+
+        @extend .q-pa-md;
+        &.compact {
+            @extend .q-pa-sm;
+        }
+
+        @extend .row;
+
+        .side {
+            @extend .col-2;
+        }
+
+        .icon {
+            @extend .side;
+            font-size: 2rem;
+        }
+        .content {
+            @extend .col;
+        
+            .title {
+                @extend .col-12;
+                @extend .q-py-sm;                    
+            }
+    
+            .description {
+                @extend .col-12;                    
+            }
+    
+        }
+
+    
+        
+
+        
+    }
+}
